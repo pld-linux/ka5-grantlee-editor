@@ -1,15 +1,15 @@
-%define		kdeappsver	19.04.1
+%define		kdeappsver	20.12.3
 %define		kframever	5.56.0
 %define		qtver		5.9.0
 %define		kaname		grantlee-editor
 Summary:	Grantlee Editor
 Name:		ka5-%{kaname}
-Version:	19.04.1
+Version:	20.12.3
 Release:	1
 License:	GPL v2+/LGPL v2.1+
 Group:		X11/Libraries
-Source0:	http://download.kde.org/stable/applications/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
-# Source0-md5:	6bb70524f9d7f939831ccd3756c28403
+Source0:	http://download.kde.org/stable/release-service/%{kdeappsver}/src/%{kaname}-%{version}.tar.xz
+# Source0-md5:	1ffe6cac05f9f1fca8d3d915691f2a92
 URL:		http://www.kde.org/
 BuildRequires:	Qt5Core-devel >= %{qtver}
 BuildRequires:	Qt5Gui-devel
@@ -25,7 +25,6 @@ BuildRequires:	cmake >= 2.8.12
 BuildRequires:	gettext-devel
 BuildRequires:	ka5-akonadi-mime-devel >= %{kdeappsver}
 BuildRequires:	ka5-grantleetheme-devel >= %{kdeappsver}
-BuildRequires:	ka5-kdepim-apps-libs-devel >= %{kdeappsver}
 BuildRequires:	ka5-kimap-devel >= %{kdeappsver}
 BuildRequires:	ka5-kpimtextedit-devel >= %{kdeappsver}
 BuildRequires:	ka5-libkleo-devel >= %{kdeappsver}
@@ -78,8 +77,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{kaname}.lang
 %defattr(644,root,root,755)
-/etc/xdg/grantleeditor.categories
-/etc/xdg/grantleeditor.renamecategories
 %attr(755,root,root) %{_bindir}/contactprintthemeeditor
 %attr(755,root,root) %{_bindir}/contactthemeeditor
 %attr(755,root,root) %{_bindir}/headerthemeeditor
@@ -90,3 +87,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_desktopdir}/org.kde.contactthemeeditor.desktop
 %{_desktopdir}/org.kde.headerthemeeditor.desktop
 %{_datadir}/config.kcfg/grantleethemeeditor.kcfg
+%{_datadir}/qlogging-categories5/grantleeditor.categories
+%{_datadir}/qlogging-categories5/grantleeditor.renamecategories
