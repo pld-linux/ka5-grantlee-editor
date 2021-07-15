@@ -50,6 +50,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Utilities and tools to manage themes in KDE PIM applications.
 
+%description -l pl.UTF-8
+Narzędzia do zarządzania motywami w aplikacjach KDE PIM.
+
 %prep
 %setup -q -n %{kaname}-%{version}
 
